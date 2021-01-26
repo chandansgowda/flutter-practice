@@ -30,13 +30,12 @@ class HomePage extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
-                child: Text("Hi"),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.greenAccent, Colors.lightBlueAccent]
-                )
-              ),
+            UserAccountsDrawerHeader(
+                accountName: Text("Chandan S Gowda"),
+                accountEmail: Text("chandansuresh007@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage("https://media-exp1.licdn.com/dms/image/C5603AQGEQBi2pZ2GSQ/profile-displayphoto-shrink_200_200/0/1594121452564?e=1613001600&v=beta&t=1zZPQBIPjwkD6TBVEr3rCXfs1-FlfxI8S6MUFsqHOLM",
+              )),
             ),
           ListTile(
             leading: Icon(Icons.person_rounded),
