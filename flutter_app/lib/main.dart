@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main(){
-  runapp(MaterialApp(
+  runApp(MaterialApp(
     title: "Hello World",
     home: HomePage(),
   ));
