@@ -4,6 +4,9 @@ void main(){
   runApp(MaterialApp(
     title: "Hello World",
     home: HomePage(),
+    theme: ThemeData(
+      primarySwatch: Colors.lightBlue,
+    ),
   ));
 }
 
@@ -12,65 +15,49 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text("  Hello World  ", style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),),
-        ),
+        title: Center(child: Text("Hello World")),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.greenAccent , Colors.lightBlue]
+              colors: [Colors.greenAccent, Colors.lightBlueAccent],
+              stops: [0.1, 1.0]
             )
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          color: Colors.black87,
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.red,
-                  ),
-                  //color: Colors.red,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.lightGreen
-                  ),
-                ),
-              ],
-            )
+      body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+                child: Text("Hi"),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.greenAccent, Colors.lightBlueAccent]
+                )
+              ),
+            ),
+          ListTile(
+            leading: Icon(Icons.person_rounded),
+            title: Text("User"),
+            trailing: Icon(Icons.edit),
+            subtitle: Text("Chandan S Gowda"),
           ),
-        ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text("Mobile Number"),
+            subtitle: Text("+9181xxxx6262"),
+            trailing: Icon(Icons.call_made_outlined),
+          )],
+        )
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+        ),
     );
   }
 }
+
 
