@@ -26,6 +26,25 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      body: Center(
+        child: Container(
+          alignment: Alignment.center,
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8)],
+            borderRadius: BorderRadius.circular(8),
+            gradient: LinearGradient(
+              colors: [Colors.lightBlue, Colors.greenAccent],
+            )
+          ),
+          child: Text("ABCD", style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),),
+        ),
+
+      ),
     );
   }
 }
